@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Interactive Navigation Menu</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color:black;
+            background:linear-gradient(to left, #0ddbf2, #000000);
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            padding: 10px 0;
+            transition: background-color 0.3s;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar ul li {
+            margin: 0 15px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navbar ul li a:hover {
+            background-color: #575757;
+            color: #fff;
+        }
+        .details{
+            border:2px solid white;
+            background:rgba(0,0,0,0.6);
+            color:white;
+            width:30vw;
+            height:30vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 3px;
+        }
+
+        .content {
+            padding: 100px 20px;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            /* padding: 60px 0; */
+            text-align: center;
+            height:100vh;
+        }
+
+        section h1 {
+            margin-bottom: 20px;
+            color:#43f5ab;
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <section id="home"><div id="1" class="details"><h1>Home</h1><p>Welcome to our website!</p></div></section>
+        <section id="about"><div id="2" class="details"><h1>About</h1><p>Learn more about us.</p></div></section>
+        <section id="services"><div id="3" class="details"><h1>Services</h1><p>Discover our services.</p></div></section>
+        <section id="contact"><div id="4" class="details"><h1>Contact</h1><p>Get in touch with us.</p></div></section>
+    </div>
+    <script>
+        document.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.backgroundColor = "#000";
+                navbar.style.padding = '5px';
+            } else {
+                navbar.style.backgroundColor = "#575757";
+                navbar.style.padding = '10px';
+            }
+        });
+    </script>
+</body>
+</html>
